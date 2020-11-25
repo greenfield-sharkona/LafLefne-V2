@@ -116,14 +116,12 @@ class AddTrip extends Component {
                   </div><br /><br /><br /><br />
                   <div className="clearfix"></div>
                   <div className="col-lg-12 text-center">
-                    <div id="success"></div>
                     <button id=" Add Form " onClick={this.handelOnClick} className="btn btn-primary btn-xl text-uppercase" type="submit">Add Trip</button>
                   </div><br /><br /><br /><br />
-                  <div className="clearfix"></div>
                   <div className="col-lg-12 text-center">
                     <div id="success"></div>
                     <Link to='/AdminPage' className='btn-mobile'>
-                      <button>Add Trip</button>
+                      <button>Back </button>
                     </Link>
                   </div>
 
