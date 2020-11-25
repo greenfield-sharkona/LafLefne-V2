@@ -16,7 +16,7 @@ import Profile from './components/user/Profile';
 import Navbar2 from './components/Homepage/Navbar-login';
 import AddTrip from './components/AddTrips/AddTrip'
 import LogIn from './components/user/login'
-import AdminTripPage from './components/trips/AdminTripPage'
+import AdminTripPage from './components/Homepage/AdminTripPage'
 
 
 
@@ -163,11 +163,8 @@ class App extends React.Component {
             />
             <Route exact path={"/LogIn"}  render={()=> (<LogIn/>)}/>
             <Route path="/trip" exact component={Trip} />
-            <Route path="/mytrip" exact component={MyTrip} />
-            <Route exact path={"/AdminPage"} render={() =>
-                isAdmin ?
-                  <AddTrip isAdmin={isAdmin} /> : <Redirect to="/mytrip" />} />
-            {/* <Route path="/AdminPage" exact component={AdminTripPage} /> */}
+            <Route path="/mytrip" exact component={MyTrip} /> 
+            <Route path="/AdminPage" exact component={AdminTripPage} />
             <Route path="/payment" exact component={Payment} />
             
 

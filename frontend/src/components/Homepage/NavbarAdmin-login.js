@@ -4,7 +4,7 @@ import './A-Style.css';
 import { Button } from './LogoutButton';
 
 
-function Navbar() {
+function NavbarAdmin() {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -53,12 +53,12 @@ function Navbar() {
                                 onClick={closeMobileMenu}
                             >User</Link>
                         </li>
-                        {/* <li>
+                        <li>
                             <Link
-                                to='/'
-                                className='buLogOut'
-                                onClick={closeMobileMenu}>Log Out</Link>
-                        </li> */}
+                                to='/AddTrip'
+                                className='nav-links'
+                                onClick={closeMobileMenu}>AddTrip</Link>
+                        </li>
                         <li className='nav-item'>
                             {button && <Button buttonStyle='btn--outline'>LOG OUT</Button>}
                         </li>
@@ -69,4 +69,4 @@ function Navbar() {
     )
 }
 
-export default Navbar
+export default NavbarAdmin

@@ -25,6 +25,7 @@ routers.post('/payment', paymentController.payment)
 routers.get('/gettrips', tripController.tripsList)
 routers.post('/addtrip', tripController.updateTrip)
 routers.post('/addTrip', tripController.addTrip)
+
 routers.get('/filldata', tripController.fillTrips)
 routers.post('/getmytrips', tripController.getmytrips)
 
