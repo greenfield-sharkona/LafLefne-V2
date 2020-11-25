@@ -17,6 +17,7 @@ import Navbar2 from './components/Homepage/Navbar-login';
 import AddTrip from './components/AddTrips/AddTrip'
 import LogIn from './components/user/login'
 import AdminTripPage from './components/Homepage/AdminTripPage'
+import AdminNav from './components/Homepage/NavbarAdmin-login'
 
 
 
@@ -30,7 +31,8 @@ class App extends React.Component {
       tokenin: "",
       testtrips: [],
       userid: '',
-      isAdmin: localStorage.getItem('isAdmin')
+      isAdmin: localStorage.getItem('isAdmin'),
+      localtoken: localStorage.getItem('token')
     }
     this.changeLogInStatus = this.changeLogInStatus.bind(this)
     this.getup = this.getup.bind(this)
@@ -113,9 +115,43 @@ class App extends React.Component {
 
   render() {
 
-    const { islogin , isAdmin } = this.state
+    const { islogin , isAdmin , localtoken } = this.state
+
     let comp
     let nav
+
+    // if(!islogin){
+    //   comp = <Route
+    //     path='/sign-up'
+    //     render={(props) => <Signup toggleLogin={this.changeLogInStatus} />}
+    //   />
+    // }
+    // else {
+    //   comp = <Route
+    //       path='/sign-up'
+    //       render={(props) => <Login toggleuser={this.changeUserStatus} toggleLogin={this.changeLogInStatus} hello='hello' />}
+    //     /> 
+   
+    // } 
+
+    // if(localtoken && isAdmin===false){  
+    //    nav = <Navbar2></Navbar2>
+    //    comp = <Route
+    //       path='/'
+    //       render={(props) => <Home toggleuser={this.changeUserStatus} toggleLogin={this.changeLogInStatus} hello='hello' />}
+    //     /> 
+      
+    //   }
+    // else if(localtoken && isAdmin===true){
+    //   nav = <AdminNav></AdminNav>
+    //   comp = <Route
+    //       path='/AdminPageAdminPage'
+    //       render={(props) => <AdminTripPage toggleuser={this.changeUserStatus} toggleLogin={this.changeLogInStatus} hello='hello' />}
+    //     /> 
+    // }
+    // else{
+    //   nav = <Navbar></Navbar>
+    // }
     if (islogin) {
       comp = <Route
         path='/sign-up'
@@ -129,12 +165,17 @@ class App extends React.Component {
         path='/sign-up'
         render={(props) => <Login toggleuser={this.changeUserStatus} toggleLogin={this.changeLogInStatus} hello='hello' />}
       />
-    }
-    if (this.state.tokenin !== `authToken=` && this.state.tokenin !== '') {
+    } //
+    if (this.state.tokenin !== `authToken=` && this.state.tokenin !== '' ) {
       console.log('token')
    
       nav = <Navbar2></Navbar2>
     }
+    // else if (this.state.tokenin !== `authToken=` && this.state.tokenin !== '' && isAdmin === true) {
+    //   console.log('token')
+   
+    //   nav = <AdminNav></AdminNav>
+    // }
     else {
       console.log('noo token')
       nav = <Navbar></Navbar>
@@ -153,8 +194,7 @@ class App extends React.Component {
               path="/trips"
               render={(props) => <Trips userid={this.state.userid} getup={this.getup} testtrips={this.state.testtrips} paymentCheck={this.paymentCheck} lable1={this.state.hello} trip={this.state.thetrip} />}
             />
-            {/* <Route path="/" exact component={Home} /> */}
-            {/* <Route path="/trips" exact component={Trips} /> */}
+            
             <Route  exact path={"/sign-up"} render={()=> (<Signup/>)}/>
             
             <Route exact path={"/AddTrip"}  render={()=> (<AddTrip/>)}/>
