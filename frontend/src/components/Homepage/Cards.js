@@ -1,6 +1,7 @@
 import React from 'react';
 import Carditem from './Carditem';
 import './A-Style.css'
+import Weathertest from '../weather/weather-test'
 
 // import $ from 'jquery';
 
@@ -17,13 +18,16 @@ class Cards extends React.Component {
     }
 
     render() {
+
         // console.log(this.props.testtrips)
         return (
             <div className='cards'>
+
                 <h1>Check Out Our Trips</h1>
                 <div className='cards__container'>
                     <div className="cards__wrapper">
                         <ul className="cards__items">
+
                             {/* EDIT HERE */}
                             {this.props.testtrips.slice(0, 3).map((trip) =>
                                 <Carditem
@@ -60,7 +64,9 @@ class Cards extends React.Component {
                                 />)}
 
                         </ul>
-                    </div>
+
+                    </div> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <div>  <Weathertest /></div>
                 </div>
             </div>
         )
