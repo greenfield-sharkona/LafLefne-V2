@@ -16,6 +16,7 @@ app.use(cookieParser())
 
 // app.use(express.static(__dirname + '/frontend/build'))
 
+
 //for deployment
 // if (process.env.NODE_ENV === 'production') {
 //   app.use(express.static(__dirname +'/frontend/build'))
@@ -34,10 +35,5 @@ module.exports = app;
 
 // Rami : test pull request .............................
 // Rami : tes pull request 2
-
 // Rami : tes pull request 3
-//hiba : test pull request 
 
-
-
-// iam sara here testing repo github 

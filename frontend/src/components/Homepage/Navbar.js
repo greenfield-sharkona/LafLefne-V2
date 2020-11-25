@@ -5,6 +5,7 @@ import { Button } from './Button';
 
 import Weathertest from '../weather/weather-test'
 
+
 function Navbar() {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
@@ -47,14 +48,28 @@ function Navbar() {
                                 className='nav-links'
                                 onClick={closeMobileMenu}>Trips</Link>
                         </li>
-                        <li>
+                        
+                        {/* <li className='nav-item'>
+                            <Link
+                                to='/AddTrip'
+                                className='nav-links'
+                                onClick={closeMobileMenu}>AddTrip</Link>
+                        </li> */}
+                        <li className='nav-item'>
+                            <Link
+                                to='/LogIn'
+                                className='nav-links'
+                                onClick={closeMobileMenu}>LogIn</Link>
+                        </li>
+
+                        <li className='nav-item'>
                             <Link
                                 to='/sign-up'
-                                className='nav-links-mobile'
-                                onClick={closeMobileMenu}>Sign Up</Link>
+                                className='nav-links'
+                                onClick={closeMobileMenu}>SignUp</Link>
                         </li>
                     </ul>
-                    {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
+                    {/* {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>} */}
                 </div>
 
 

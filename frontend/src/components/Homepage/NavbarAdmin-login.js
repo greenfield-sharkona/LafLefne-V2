@@ -2,12 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import './A-Style.css';
 import { Button } from './LogoutButton';
-import Weathertest from '../weather/weather-test'
 
 
-
-
-function Navbar() {
+function NavbarAdmin() {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -43,6 +40,12 @@ function Navbar() {
                     <li className='nav-item'>
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>Home</Link>
                         </li>
+                        <li>
+                            <Link
+                                to='/AddTrip'
+                                className='nav-links'
+                                onClick={closeMobileMenu}>AddTrip</Link>
+                        </li>
                         <li className='nav-item'>
                             <Link
                                 to='/trips/'
@@ -56,16 +59,15 @@ function Navbar() {
                                 onClick={closeMobileMenu}
                             >User</Link>
                         </li>
-                     
+                      
                         <li className='nav-item'>
                             {button && <Button buttonStyle='btn--outline'>LOG OUT</Button>}
                         </li>
                     </ul>
                 </div>
-
             </nav>
         </>
     )
 }
 
-export default Navbar
+export default NavbarAdmin
