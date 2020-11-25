@@ -16,7 +16,8 @@ app.use(cookieParser())
 
 // app.use(express.static(__dirname + '/frontend/build'))
 
-// //for deployment
+
+//for deployment
 // if (process.env.NODE_ENV === 'production') {
 //   app.use(express.static(__dirname +'/frontend/build'))
 // }

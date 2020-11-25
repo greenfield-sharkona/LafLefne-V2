@@ -5,6 +5,8 @@ import $ from 'jquery'
 // import { List, ListItem, ListItemContent } from 'react-mdl';
 // import ReactDOM from "react-dom";
 // import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch, useParams } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap'
 
 class Profile extends React.Component {
 
@@ -88,6 +90,8 @@ class Profile extends React.Component {
       cards = <div>No Booked Trips Yet</div>
     }
     return (
+
+
       <div className="imgdiv">
         <div className="row" id="row">
           <div id="profile" className="col-sm-4 right" >
@@ -132,7 +136,10 @@ class Profile extends React.Component {
             </div>
           </div>
         </div>
+
       </div>
+
+
     )
   }
 

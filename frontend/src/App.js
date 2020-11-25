@@ -1,8 +1,9 @@
 import React from 'react';
 import Navbar from './components/Homepage/Navbar';
 import Footer from './components/Homepage/Footer';
-import Home from './components/Homepage/Home'
-import $ from 'jquery'
+import Home from './components/Homepage/Home';
+import $ from 'jquery';
+import CardItem from './components/user/UserCarditem.js';
 
 import { BrowserRouter as Router, Switch, Route , Redirect} from "react-router-dom";
 import './App.css';
@@ -112,6 +113,7 @@ class App extends React.Component {
   paymentCheck() {
     console.log('payment method')
   }
+  //const api = fetch('');
 
   render() {
 
@@ -181,6 +183,41 @@ class App extends React.Component {
       nav = <Navbar></Navbar>
     }
     return (
+
+
+
+      <Router>
+        {nav}
+        {/* <Weather /> */}
+        <Switch>
+          {comp}
+          <Route
+            path="/"
+            exact render={(props) => <Home getup={this.getup} userid={this.state.userid} testtrips={this.state.testtrips} paymentCheck={this.paymentCheck} hello={this.state.hello} trip={this.state.thetrip} />}
+          />
+          <Route
+            path="/trips"
+            render={(props) => <Trips userid={this.state.userid} getup={this.getup} testtrips={this.state.testtrips} paymentCheck={this.paymentCheck} lable1={this.state.hello} trip={this.state.thetrip} />}
+          />
+          {/* <Route path="/" exact component={Home} /> */}
+          {/* <Route path="/trips" exact component={Trips} /> */}
+          <Route path="/sign-up" exact component={Signup} />
+          <Route path="/user" exact render={(props) => <Profile userid={this.state.userid} />}
+          />
+          <Route path="/trip" exact component={Trip} />
+          <Route path="/mytrip" exact component={MyTrip} />
+
+          <Route path="/payment" exact component={Payment} />
+
+        </Switch>
+        <Footer />
+        <CardItem />
+
+      </Router>
+
+
+
+
       <>
         <Router>
           {nav}
@@ -212,6 +249,7 @@ class App extends React.Component {
           <Footer />
         </Router>
       </>
+
 
     )
 

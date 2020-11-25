@@ -2,6 +2,9 @@ import React from "react";
 import './trips.css';
 // import { Link } from 'react-router-dom';
 import Day from './days'
+
+import Weathertest from '../weather/weather-test'
+
 class Trip extends React.Component {
 
     constructor(props) {
@@ -44,6 +47,7 @@ class Trip extends React.Component {
 
     }
     render() {
+        <Weathertest />
         return (
             <div >
                 <div className="d-flex flex-wrap justify-content-around" style={{ 'textAlign': 'center', 'marginTop': '20px' }}>

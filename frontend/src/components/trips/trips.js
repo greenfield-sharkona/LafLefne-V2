@@ -2,6 +2,10 @@ import React from "react";
 import './trips.css';
 import { Link } from 'react-router-dom';
 import Day from './days'
+
+
+import Weathertest from '../weather/weather-test'
+
 class Trip extends React.Component {
 
     constructor(props) {
@@ -39,11 +43,13 @@ class Trip extends React.Component {
 
 
     booktrip() {
+
         console.log('clicked ')
         this.props.location.paymentCheck()
 
     }
     render() {
+
         var today = new Date();
 
         let statedata = {}
@@ -64,7 +70,10 @@ class Trip extends React.Component {
 
 
         return (
-            <div >
+
+            < div >
+                <div>  <Weathertest /></div>
+
                 <div className="d-flex flex-wrap justify-content-around" style={{ 'textAlign': 'center', 'marginTop': '20px' }}>
                     <div>
                         <img className='imgs' src='https://www.flaticon.com/svg/static/icons/svg/2945/2945620.svg' alt='Trip Map'></img>
