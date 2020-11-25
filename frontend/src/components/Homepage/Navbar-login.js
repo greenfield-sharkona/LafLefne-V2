@@ -53,12 +53,7 @@ function Navbar() {
                                 onClick={closeMobileMenu}
                             >User</Link>
                         </li>
-                        {/* <li>
-                            <Link
-                                to='/'
-                                className='buLogOut'
-                                onClick={closeMobileMenu}>Log Out</Link>
-                        </li> */}
+                     
                         <li className='nav-item'>
                             {button && <Button buttonStyle='btn--outline'>LOG OUT</Button>}
                         </li>

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import NavbarAdmin from '../Homepage/NavbarAdmin-login'
+import AddTrip from '../AddTrips/AddTrip'
+
+import { Link } from 'react-router-dom';
+
+
 
 
 class AdminPage extends Component {
@@ -12,7 +16,6 @@ constructor(props){
    
 }
 render(){
-    <NavbarAdmin/>
     return(
         <section className="page-section" id="contact">
         <div className="container">
@@ -22,6 +25,9 @@ render(){
             </div>
           </div> <br/><br/>
           <div className="row">
+          <Link to='/AddTrip' className='btn-mobile'>
+            <button>Add Trip</button>
+        </Link>
           </div>
         </div>
       </section> 

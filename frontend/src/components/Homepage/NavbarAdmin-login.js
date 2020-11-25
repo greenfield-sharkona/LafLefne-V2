@@ -40,6 +40,12 @@ function NavbarAdmin() {
                     <li className='nav-item'>
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>Home</Link>
                         </li>
+                        <li>
+                            <Link
+                                to='/AddTrip'
+                                className='nav-links'
+                                onClick={closeMobileMenu}>AddTrip</Link>
+                        </li>
                         <li className='nav-item'>
                             <Link
                                 to='/trips/'
@@ -53,12 +59,7 @@ function NavbarAdmin() {
                                 onClick={closeMobileMenu}
                             >User</Link>
                         </li>
-                        <li>
-                            <Link
-                                to='/AddTrip'
-                                className='nav-links'
-                                onClick={closeMobileMenu}>AddTrip</Link>
-                        </li>
+                      
                         <li className='nav-item'>
                             {button && <Button buttonStyle='btn--outline'>LOG OUT</Button>}
                         </li>

@@ -4,6 +4,7 @@ import $ from 'jquery'
 import axios from 'axios'
 import AddTrip from '../AddTrips/AddTrip'
 // import { response } from 'express';
+import AdminPage from '../Homepage/AdminTripPage'
 class Login extends React.Component {
   constructor(props) {
     super(props)
@@ -27,7 +28,7 @@ class Login extends React.Component {
         localStorage.setItem('token' , response.data.token)
         localStorage.setItem('isAdmin', response.data.isAdmin)
         if(response.data.isAdmin){
-          window.location.href ='../AddTrips/AddTrip'
+          window.location.href ='/AdminPage'
         }
         else{
         window.location.href = "/"
