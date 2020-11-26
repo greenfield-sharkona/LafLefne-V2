@@ -35,7 +35,7 @@ Laflefne is local(Palestine) tour booking and viewing website.
 1. Fork the repo from github.
 2. Clone down your fork
 ```
-git clone https://github.com/<user Name>/GreenField5
+git clone https://github.com/greenfield-sharkona/LafLefne-V2.git
 ```
 3. Move into the repo after its been cloned onto your machine.
 4. Follow the instructions in the 'Installing Dependencies' section.
