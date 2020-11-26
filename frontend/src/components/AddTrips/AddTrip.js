@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 
-
+// Form to add trip to Trpis DataBase.
 class AddTrip extends Component {
   constructor(props) {
     super(props)
