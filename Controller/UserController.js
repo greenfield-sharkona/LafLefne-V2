@@ -6,7 +6,7 @@ const { use } = require('../routes');
 
 exports.signUpUser = async (req, res) => {
     const salt = await bcrypt.genSalt(10)
-    const hashedPass = await bcrypt.hash(req.body.userPass, salt)
+    const hashedPass = await bcrypt.hash(req.body.userPass, salt) // must make hash after check if user in our database or not.
     // User Data when Signing up
     console.log(req.body)
     userMail = req.body.userMail
@@ -38,6 +38,7 @@ exports.signUpUser = async (req, res) => {
             newuser.userNum = req.body.userNum
             newuser.trips = []
             newuser.newsLetter = req.body.newsLetter
+            newuser.isAdmin=false
             newuser.save((err, saveduse) => {
                 if (err) {
                     console.log(err)
@@ -46,6 +47,7 @@ exports.signUpUser = async (req, res) => {
                 // console.log("saving user", saveduse)
                 var token = jwt.sign({ _id: saveduse._id }, process.env.TOKEN_SECRET)
                 res.cookie('authToken', token)
+                // we can see a token in postman.
                 return res.status(200).send('created')
 
             })
@@ -56,8 +58,9 @@ exports.signUpUser = async (req, res) => {
 }
 
 exports.loginUser = (req, res) => {
+    console.log(req.body)
     var userMail = req.body.userMail
-    if (!userMail) {
+    if (!userMail) {  0
         return res.status(410).send('error')
     }
     UserModel.findOne({ userMail: userMail }, async (err, user) => {
@@ -77,7 +80,9 @@ exports.loginUser = (req, res) => {
             else {
                 var token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET)
                 res.cookie('authToken', token)
-                return res.status(200).send(token)
+                // console.log("is Admin" , user.isAdmin)
+                // res.json({isAdmin:user.isAdmin})
+                return res.status(200).header(token).send({token,isAdmin:user.isAdmin});
             }
         }
     })
@@ -108,3 +113,24 @@ exports.getuserinfo = (req, res) => {
         }
     })
 }
+
+exports.deleteTrip = (req, res) => {
+    const id = req.params.id;
+    trips.findByIdAndRemove(id)
+      .then(data => {
+        if (!data) {
+          res.status(404).send({
+            message: `Cannot delete`
+          });
+        } else {
+          res.send({
+            message: " the trip was deleted successfully!"
+          });
+        }
+      })
+      .catch(err => {
+        res.status(500).send({
+          message: "Could not delete Tutorial with id=" + id
+        });
+      });
+  };
