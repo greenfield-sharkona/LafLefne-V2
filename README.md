@@ -1,12 +1,11 @@
 # Project Name : Legacy (LafLefne)
 
-## Team
+## Teamc one 
   - Deema AbuZahra
   - Emad Aqel
   - Noor Aldeen Ashqer 
   - Qamar Jaradat
   - Razan Abusamra
-  
 ## Contributors 
   - Israa Kittaneh
   - Belal AbuHani
@@ -24,6 +23,10 @@
 
 ## About
 Laflefne is local(Palestine) tour booking and viewing website.
+
+##feature added to the main project :
+- Add Trip by admin 
+- the user can see the Weather for one Week 
 
 ## Requirements
 
