@@ -6,6 +6,13 @@
   - Noor Aldeen Ashqer 
   - Qamar Jaradat
   - Razan Abusamra
+  
+## Contributors 
+  - Israa Kittaneh
+  - Belal AbuHani
+  - Sara Al-Ayed
+  - Hiba Tamimi
+  - Rami Nawahda
 
 ## Table of Contents
 
@@ -43,19 +50,16 @@ cd frontend/
 npm install
 ```
 ```
-npm run build
+npm start
 ```
 2. Open terminal 2: From within the root directory:
 ```
 npm install
 ```
 ```
-npm install -g nodemon
+npm start
 ```
-```
-npm start 
-```
-open your localhost:4000
+open your localhost:3000
 
 ### Picture Documentation
 ![Home Page](https://i.imgur.com/T6WHKg9.png)
