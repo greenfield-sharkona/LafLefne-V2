@@ -57,7 +57,7 @@ class Weathertest extends Component {
         weekday[4] = "Thursday";
         weekday[5] = "Friday";
         weekday[6] = "Saturday";
-
+// to view Ramallah : default City 
         var day = weekday[d.getDay()];
         this.setState(
             {
@@ -84,7 +84,7 @@ class Weathertest extends Component {
 
 
 
-
+//this function to view temp for 7 days and display the day 
     getWeather = async (e) => {
         console.log(e.target.value)
         var city = e.target.value;
