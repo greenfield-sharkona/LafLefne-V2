@@ -1,4 +1,4 @@
-# Project Name : LafLefne 
+# Project Name : Legacy (LafLefne)
 
 ## Team
   - Deema AbuZahra
@@ -29,6 +29,10 @@ Laflefne is local(Palestine) tour booking and viewing website.
 
 - Node v12.18.4
 - React v17.0.1
+- Bootstrap
+- axios
+- mongoose
+- express
 
 ## Development
 
