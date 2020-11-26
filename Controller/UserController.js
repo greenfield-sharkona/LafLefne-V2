@@ -82,6 +82,7 @@ exports.loginUser = (req, res) => {
                 // console.log("is Admin" , user.isAdmin)
                 // res.json({isAdmin:user.isAdmin})
                 return res.status(200).header(token).send({token,isAdmin:user.isAdmin});
+                // send if user is admin or not.
             }
         }
     })
